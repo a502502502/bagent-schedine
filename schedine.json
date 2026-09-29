@@ -3,28 +3,7 @@
   "check_seconds": 30,
   "profit_label": "—",
   "present": [],
-  "future": [
-    {
-      "id": "TICKET_RADDOPPIO_WEEKEND_03OTT",
-      "title": "Schedina 1: Raddoppio Primi Tempi Blindati (@1.86)",
-      "label": "Certificata (EV +40.8%)",
-      "odds": "1.86×",
-      "legs": [
-        {
-          "when": "03/10 19:45 CEST",
-          "match": "Defensa Y Justicia vs San Lorenzo",
-          "pick": "MultiGol 0-1 1° Tempo",
-          "odd": "1.38"
-        },
-        {
-          "when": "03/10 22:00 CEST",
-          "match": "Atletico Tucuman vs Barracas Central",
-          "pick": "MultiGol 0-1 1° Tempo",
-          "odd": "1.35"
-        }
-      ]
-    }
-  ],
+  "future": [],
   "past": [
     {
       "id": "TICKET_NL_25SET",
