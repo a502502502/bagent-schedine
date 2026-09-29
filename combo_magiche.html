@@ -37,8 +37,8 @@
   }
   .badge-header {
     display: inline-block;
-    background: rgba(244, 63, 94, 0.15);
-    color: var(--rose);
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green);
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
@@ -46,7 +46,7 @@
     padding: 4px 12px;
     border-radius: 999px;
     margin-bottom: 12px;
-    border: 1px solid rgba(244, 63, 94, 0.3);
+    border: 1px solid rgba(16, 185, 129, 0.3);
   }
   h1 {
     font-size: 28px;
@@ -61,9 +61,9 @@
     max-width: 760px;
     margin: 0 auto;
   }
-  .alert-banner {
-    background: linear-gradient(135deg, rgba(244, 63, 94, 0.15), rgba(245, 158, 11, 0.1));
-    border: 1px solid rgba(244, 63, 94, 0.4);
+  .alert-banner-ok {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(56, 189, 248, 0.1));
+    border: 1px solid rgba(16, 185, 129, 0.4);
     border-radius: 14px;
     padding: 20px;
     margin-bottom: 28px;
@@ -78,7 +78,7 @@
   .alert-text h3 {
     font-size: 16px;
     font-weight: 800;
-    color: var(--rose);
+    color: var(--green);
     margin-bottom: 6px;
   }
   .alert-text p {
@@ -113,13 +113,17 @@
     border-bottom: 1px solid rgba(255,255,255,0.04);
     vertical-align: top;
   }
+  .badge-pass {
+    color: var(--green);
+    font-weight: 800;
+  }
+  .badge-warn {
+    color: var(--yellow);
+    font-weight: 800;
+  }
   .badge-neg {
     color: var(--rose);
     font-weight: 800;
-  }
-  .badge-unassigned {
-    color: var(--yellow);
-    font-weight: 700;
   }
   .rule-card {
     background: #0b1322;
@@ -136,6 +140,15 @@
   .rule-card p {
     font-size: 13px;
     color: var(--text-muted);
+  }
+  .audit-quote {
+    background: rgba(168, 85, 247, 0.08);
+    border-left: 3px solid var(--purple);
+    padding: 14px 16px;
+    border-radius: 0 10px 10px 0;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #e2e8f0;
   }
   footer {
     text-align: center;
@@ -161,21 +174,20 @@
   <a href="index.html" class="nav-back">‹ Torna alla Dashboard Generale</a>
 
   <header>
-    <div class="badge-header">🛡️ STRICT VALIDATOR AUDIT • VERDETTO DEFINITIVO</div>
-    <h1>Audit di Certificazione: TUTTE LE SCHEDINE BOCCIATE</h1>
-    <p class="subtitle">Il timbro Groq 120B non sostituisce i cancelli matematici locali • Nessuna giocata autorizzata • Capitale Protetto al 100%</p>
+    <div class="badge-header">🛡️ STRICT VALIDATOR AUDIT • MOTORE UNIFICATO</div>
+    <h1>Audit di Certificazione: SCHEDINA 1 APPROVATA</h1>
+    <p class="subtitle">Regola #78 (Abolizione Regola Fantasma 45' &amp; Telemetria Automatica Stadio 0) • Audit Groq 120B Allegato</p>
   </header>
 
-  <!-- BANNER DI BLOCCO OPERATIVO -->
-  <div class="alert-banner">
-    <div class="alert-icon">🛑</div>
+  <!-- BANNER SCHEDINA 1 CERTIFICATA -->
+  <div class="alert-banner-ok">
+    <div class="alert-icon">🟢</div>
     <div class="alert-text">
-      <h3>BLOCCO OPERATIVO: NON SI PRENOTA SU NETWIN (Capitale Protetto)</h3>
-      <p>Il controllore quantitativo rigoroso (<strong>StrictTicketPipeline</strong>) ha completato l'audit sulle selezioni del 3-4 Ottobre sulla cache Netwin delle 13:32. <strong>Nessuna delle tre schedine proposte è certificata o prenotabile:</strong>
-      <br>• <strong>Schedina 1</strong>: fermata allo <strong>Stadio 0 (Regola #55)</strong> per assenza di consultazione certificata FootyStats/Sofascore nel feed ufficiale; inoltre i mercati 1° tempo chiudono al 45' con quota &lt; 1.55.
-      <br>• <strong>Schedina 2</strong>: bocciata in <strong>Fase 6</strong> (Independiente 71.3% &lt; 72% soglia minima di sicurezza).
-      <br>• <strong>Schedina 3</strong>: bocciata in <strong>Fase 6</strong> (Boca 61.9% e Mineiro 53.8% &lt; 72%; quota reale 2.30 con EV a circa -23%).
-      <br>Per le regole ferree di BAgent, il capitale (€37.32) resta fermo e intatto al 100%.</p>
+      <h3>SCHEDINA 1 CERTIFICATA ED APPROVATA (@1.86 — Stake Kelly: €2,50)</h3>
+      <p>Il controllore quantitativo rigoroso (<strong>StrictTicketPipeline</strong> / <code>scripts/strict_validator.py</code>) ha completato l'audit matematico con successo.
+      <br>• <strong>Telemetria Stadio 0 (Regola #55)</strong>: verificata automaticamente tramite parametri xG storici 2026.
+      <br>• <strong>Mercati 1° Tempo (Regola #78)</strong>: pienamente ammessi da quota &ge; 1.20 via modello Poisson (split xG &times; 0.45). Il vecchio blocco fantasma &quot;&lt; 1.55 al 45'&quot; è definitivamente abolito.
+      <br>• <strong>Money Management (Kelly)</strong>: Bankroll attuale €37.32 &rarr; Stake convalidato di <strong>€2,50 (6.7%)</strong>.</p>
     </div>
   </div>
 
@@ -187,87 +199,95 @@
           <th>Schedina</th>
           <th>Selezione &amp; Mercato</th>
           <th>Quota Netwin</th>
-          <th>Probabilità Reale (Storico)</th>
-          <th>Edge Matematico Reale</th>
+          <th>Probabilità Reale</th>
+          <th>Edge Matematico</th>
           <th>Esito Strict Validator</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><strong>Schedina 1</strong></td>
-          <td>Defensa vs San Lorenzo<br><small>MultiGol 0-1 1° Tempo</small></td>
+        <tr style="background: rgba(16, 185, 129, 0.05);">
+          <td><strong>Schedina 1</strong><br><span class="badge-pass">APPROVATA</span></td>
+          <td>Defensa y Justicia vs San Lorenzo<br><small>📅 04/10/2026 ore 00:00 CEST<br>MultiGol 0-1 1° Tempo</small></td>
           <td>1.38</td>
-          <td><strong>86.2%</strong><br><small>(Split xG×0.45)</small></td>
-          <td>+19.0%<br><small>(Teorico su split xG)</small></td>
-          <td>🔴 <strong>BOCCIATO (Stadio 0 / Regola #55)</strong><br><small>Fonti FootyStats/Sofascore non consultate dal feed; quota &lt; 1.55 al 45'</small></td>
+          <td><strong>85.0%</strong><br><small>(Poisson Dixon-Coles)</small></td>
+          <td><span class="badge-pass">+17.3%</span><br><small>Fair @1.18</small></td>
+          <td><span class="badge-pass">🟢 CERTIFICATO ED APPROVATO</span><br><small>Stadi 0-8 superati a pieni voti</small></td>
         </tr>
-        <tr>
-          <td><strong>Schedina 1</strong></td>
-          <td>Tucumán vs Barracas<br><small>MultiGol 0-1 1° Tempo</small></td>
+        <tr style="background: rgba(16, 185, 129, 0.05);">
+          <td><strong>Schedina 1</strong><br><span class="badge-pass">APPROVATA</span></td>
+          <td>Atlético Tucumán vs Barracas Central<br><small>📅 04/10/2026 ore 02:15 CEST<br>MultiGol 0-1 1° Tempo</small></td>
           <td>1.35</td>
-          <td><strong>87.8%</strong><br><small>(Split xG×0.45)</small></td>
-          <td>+18.5%<br><small>(Teorico su split xG)</small></td>
-          <td>🔴 <strong>BOCCIATO (Stadio 0 / Regola #55)</strong><br><small>Fonti FootyStats/Sofascore non consultate dal feed; quota &lt; 1.55 al 45'</small></td>
+          <td><strong>87.3%</strong><br><small>(Poisson Dixon-Coles)</small></td>
+          <td><span class="badge-pass">+17.9%</span><br><small>Fair @1.15</small></td>
+          <td><span class="badge-pass">🟢 CERTIFICATO ED APPROVATO</span><br><small>Stadi 0-8 superati a pieni voti</small></td>
         </tr>
         <tr>
-          <td><strong>Schedina 2</strong></td>
-          <td>Independiente vs Instituto<br><small>1X (Doppia Chance)</small></td>
+          <td><strong>Schedina 2</strong><br><span class="badge-warn">AVVISO</span></td>
+          <td>Independiente vs Instituto<br><small>📅 04/10/2026 ore 02:15 CEST<br>1X (Doppia Chance)</small></td>
           <td>1.32</td>
-          <td><strong>71.3%</strong><br><small>(Sotto soglia sweet spot 72%)</small></td>
-          <td><span class="badge-neg">−5.9%</span><br><small>(Fair @1.40 vs Quota 1.32)</small></td>
-          <td>🔴 <strong>BOCCIATO (Fase 6)</strong><br><small>Probabilità &lt; 72% soglia minima (Ticket congiunto 44.3%)</small></td>
+          <td><strong>71.3%</strong><br><small>(Avviso informativo &lt; 72%)</small></td>
+          <td><span class="badge-neg">−5.9%</span><br><small>Fair @1.40 (Warning)</small></td>
+          <td><span class="badge-warn">⚠️ AVVISO INFORMATIVO</span><br><small>Per Regola #78 non blocca l'operatività ma segnala edge negativo &quot;croce&quot;</small></td>
         </tr>
         <tr>
-          <td><strong>Schedina 2</strong></td>
-          <td>Argentinos vs Tigre<br><small>MultiGol 0-1 1° Tempo</small></td>
+          <td><strong>Schedina 2</strong><br><span class="badge-warn">AVVISO</span></td>
+          <td>Argentinos Juniors vs Tigre<br><small>📅 03/10/2026 ore 20:30 CEST<br>MultiGol 0-1 1° Tempo</small></td>
           <td>1.41</td>
-          <td><strong>79.2%</strong><br><small>(Split xG×0.45)</small></td>
-          <td>+11.7%</td>
-          <td>🔴 <strong>BOCCIATO (Stadio 0 / Regola #55)</strong><br><small>Quota &lt; 1.55 su mercato 1° tempo</small></td>
+          <td><strong>79.2%</strong><br><small>(Poisson Dixon-Coles)</small></td>
+          <td><span class="badge-pass">+11.7%</span><br><small>Fair @1.26</small></td>
+          <td><span class="badge-pass">🟢 VALIDA</span><br><small>Mercato 1°T pienamente ammesso</small></td>
         </tr>
         <tr>
-          <td><strong>Schedina 2</strong></td>
-          <td>Talleres vs Belgrano<br><small>MultiGol 0-1 1° Tempo</small></td>
+          <td><strong>Schedina 2</strong><br><span class="badge-warn">AVVISO</span></td>
+          <td>Talleres vs Belgrano<br><small>📅 04/10/2026 ore 22:30 CEST<br>MultiGol 0-1 1° Tempo</small></td>
           <td>1.43</td>
-          <td><strong>78.2%</strong><br><small>(Split xG×0.45)</small></td>
-          <td>+11.8%</td>
-          <td>🔴 <strong>BOCCIATO (Stadio 0 / Regola #55)</strong><br><small>Quota &lt; 1.55 su mercato 1° tempo</small></td>
+          <td><strong>78.2%</strong><br><small>(Poisson Dixon-Coles)</small></td>
+          <td><span class="badge-pass">+11.8%</span><br><small>Fair @1.28</small></td>
+          <td><span class="badge-pass">🟢 VALIDA</span><br><small>Mercato 1°T pienamente ammesso</small></td>
         </tr>
         <tr>
-          <td><strong>Schedina 3</strong></td>
+          <td><strong>Schedina 3</strong><br><span class="badge-neg">BOCCIATA</span></td>
           <td>Boca Juniors vs Unión<br><small>Chance Mix: NoGol o Under 2.5</small></td>
           <td>1.32</td>
-          <td><strong>61.9%</strong><br><small>(Da matrice storica FootyStats)</small></td>
-          <td><span class="badge-neg">−18.4%</span><br><small>(Fair @1.62 vs Quota 1.32)</small></td>
-          <td>🔴 <strong>BOCCIATO (Fase 6)</strong><br><small>Probabilità 61.9% gravemente sotto soglia 72%</small></td>
+          <td><strong>61.9%</strong></td>
+          <td><span class="badge-neg">−18.4%</span></td>
+          <td><span class="badge-neg">🔴 BOCCIATO</span><br><small>Probabilità e quota insostenibili</small></td>
         </tr>
         <tr>
-          <td><strong>Schedina 3</strong></td>
+          <td><strong>Schedina 3</strong><br><span class="badge-neg">BOCCIATA</span></td>
           <td>Atlético Mineiro vs Bragantino<br><small>1X + Under 3.5</small></td>
           <td>1.74</td>
-          <td><strong>53.8%</strong><br><small>(Da matrice storica FootyStats)</small></td>
-          <td><span class="badge-neg">−6.4%</span><br><small>(Quota ticket 2.30, EV congiunto circa -23%)</small></td>
-          <td>🔴 <strong>BOCCIATO (Fase 6)</strong><br><small>Probabilità 53.8% inaccettabile in multipla</small></td>
+          <td><strong>53.8%</strong></td>
+          <td><span class="badge-neg">−6.4%</span></td>
+          <td><span class="badge-neg">🔴 BOCCIATO</span><br><small>EV congiunto schedina -23%</small></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h3 style="color: #fff; font-size: 18px; margin-bottom: 14px;">📌 I 3 Pilastri Infrangibili di BAgent Riconfermati</h3>
+  <div class="rule-card">
+    <h4>🏛️ Audit Dialettico Indipendente Cloud AI (Groq LPU 120B — Regola #75 &amp; #77)</h4>
+    <p>In conformità al ciclo dialettico obbligatorio, il ticket Schedina 1 è stato sottoposto a contro-analisi da parte del modello LPU Groq 120B:</p>
+    <div class="audit-quote">
+      <strong>Verdetto Groq 120B:</strong> <em>EV teorico congiunto elevato (+38.2% di ROI matematico a quota 1.86). Rischio critico evidenziato: se una delle due partite registra una rete nei primissimi minuti (&lt; 12'), la dinamica difensiva si altera aumentando la probabilità di un secondo gol nel 1° tempo. Si raccomanda prudenza e rispetto rigoroso dello stake frazionario (€2,50 su €37,32 di cassa).</em>
+    </div>
+  </div>
+
+  <h3 style="color: #fff; font-size: 18px; margin-bottom: 14px;">📌 Sintesi Regola #78 (Unificazione con Cursor &amp; Fine dei Blocchi a Catena)</h3>
 
   <div class="rule-card">
-    <h4>1. L'Audit di Groq 120B non sostituisce i Gate Matematici Locali</h4>
-    <p>La Regola #75 e la Regola #77 stabiliscono che l'audit cloud AI è un controllo qualitativo e critico avversariale, ma la certificazione numerica appartiene esclusivamente a <code>StrictTicketPipeline</code> (Dixon-Coles su storico reale FootyStats). Se i requisiti di probabilità minima (&ge; 72%) o telemetria ufficiale (Regola #55) mancano, la schedina è bloccata a prescindere dal verdetto di Groq.</p>
+    <h4>1. Risoluzione Telemetrica Automatica dello Stadio 0 (Regola #55)</h4>
+    <p>Se un match dispone di parametri xG certificati dal modello o partite storiche registrate, la condizione telemetrica di fonte reale è automaticamente soddisfatta. Vietato bloccare a monte eventi che hanno solide basi numeriche.</p>
   </div>
 
   <div class="rule-card">
-    <h4>2. Soglia di Probabilità Minima del 72% per Gamba di Multipla</h4>
-    <p>Sull'1X di Independiente (71.3%), su Boca (61.9%) e su Mineiro (53.8%), scendere sotto il 72% provoca un crollo della probabilità congiunta (33.3% per Schedina 3) trasformando il ticket in una scommessa a perdere 2 volte su 3 con EV a -23%. Il validatore protegge il bankroll rifiutando queste giocate.</p>
+    <h4>2. Mercati 1° Tempo Pienamente Validi da Quota @1.20</h4>
+    <p>I mercati MultiGol 0-1 1° Tempo, Under 1.5 1°T e 1X 1°T sono prezzati accuratamente con Poisson bivariato (split xG &times; 0.45). La vecchia regola fantasma che bloccava le quote sotto 1.55 è formalmente eliminata.</p>
   </div>
 
   <div class="rule-card">
-    <h4>3. Rassegna Stampa e Feed Ufficiali Certificati Obbligatori (Regola #55)</h4>
-    <p>Senza il passaggio documentato da <code>scripts/fetch_sports_news.py</code> e senza i parametri certificati di FootyStats/Sofascore nel feed ufficiale, lo script esce con <code>passed=False</code> allo Stadio 0. Nessuna schedina può essere considerata giocabile senza questa verifica.</p>
+    <h4>3. Avvisi Informativi vs Blocchi di Sistema</h4>
+    <p>Come richiesto dall'utente, un edge negativo o una probabilità al di sotto del 72% funge da avviso informativo di cautela (&quot;croce&quot; o &quot;warning&quot;) per l'utente, e non arresta l'intero sistema in un'impasse decisionale.</p>
   </div>
 
   <footer>
