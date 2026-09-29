@@ -6,8 +6,8 @@
   "future": [
     {
       "id": "TICKET_ARG_03OTT",
-      "title": "Liga Profesional 3 ottobre — raddoppio",
-      "label": "Futura",
+      "title": "Liga Profesional 3 ottobre — Raddoppio Chance Mix",
+      "label": "Certificata",
       "odds": "1.77×",
       "stake": "€2,50",
       "legs": [
@@ -22,6 +22,33 @@
           "match": "Atlético Tucumán vs Barracas Central",
           "pick": "Chance Mix: pareggio o Under 2.5 · P 86,7% · edge +14,5% · stella",
           "odd": "1.32"
+        }
+      ]
+    },
+    {
+      "id": "TICKET_TRIPLA_ARG_03_04OTT",
+      "title": "Liga Profesional 3-4 ottobre — Tripla MultiGol 1°T",
+      "label": "Certificata",
+      "odds": "2.84×",
+      "stake": "€2,00",
+      "legs": [
+        {
+          "when": "2026-10-03 00:15 CEST",
+          "match": "Independiente vs Instituto",
+          "pick": "MultiGol 0-1 1° Tempo · P 76,3% · edge +7,6% · stella",
+          "odd": "1.41"
+        },
+        {
+          "when": "2026-10-04 00:15 CEST",
+          "match": "Argentinos Juniors vs Tigre",
+          "pick": "MultiGol 0-1 1° Tempo · P 77,9% · edge +9,8% · stella",
+          "odd": "1.41"
+        },
+        {
+          "when": "2026-10-04 22:00 CEST",
+          "match": "Talleres Córdoba vs Belgrano",
+          "pick": "MultiGol 0-1 1° Tempo · P 78,2% · edge +11,8% · stella",
+          "odd": "1.43"
         }
       ]
     }
