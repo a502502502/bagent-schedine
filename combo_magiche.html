@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BAgent — Schedine Sudamerica Certificate (3-4 Ottobre vs 8-9 Ottobre)</title>
+<title>BAgent — Le 3 Schedine del Weekend (3 - 4 Ottobre 2026)</title>
 <style>
   :root {
     --bg: #090e17;
@@ -53,6 +53,11 @@
     color: var(--yellow);
     border-color: rgba(245, 158, 11, 0.3);
   }
+  .badge-audit {
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--green);
+    border-color: rgba(16, 185, 129, 0.3);
+  }
   h1 {
     font-size: 28px;
     font-weight: 800;
@@ -65,7 +70,7 @@
   .subtitle {
     color: var(--text-muted);
     font-size: 15px;
-    max-width: 700px;
+    max-width: 720px;
     margin: 0 auto;
   }
   .section-divider {
@@ -73,7 +78,7 @@
     align-items: center;
     gap: 12px;
     margin: 36px 0 20px;
-    padding: 10px 16px;
+    padding: 12px 18px;
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 12px;
@@ -82,9 +87,8 @@
     font-size: 18px;
     font-weight: 800;
     letter-spacing: -0.3px;
+    color: var(--green);
   }
-  .section-divider.oct34 h2 { color: var(--green); }
-  .section-divider.oct89 h2 { color: var(--cyan); }
   .section-divider span {
     font-size: 12px;
     color: var(--text-muted);
@@ -106,8 +110,8 @@
     top: 0; left: 0; right: 0; height: 3px;
     background: linear-gradient(90deg, var(--cyan), var(--green));
   }
-  .ticket-card.week2::before {
-    background: linear-gradient(90deg, var(--purple), var(--cyan));
+  .ticket-card.card-t3::before {
+    background: linear-gradient(90deg, var(--yellow), var(--rose));
   }
   .ticket-header {
     display: flex;
@@ -244,8 +248,6 @@
     border-left: 2px solid var(--cyan);
   }
   .audit-quote {
-    background: rgba(16, 185, 129, 0.05);
-    border: 1px solid rgba(16, 185, 129, 0.25);
     border-radius: 10px;
     padding: 14px 16px;
     font-size: 13px;
@@ -254,12 +256,38 @@
     gap: 12px;
     align-items: flex-start;
   }
+  .audit-quote.approved {
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+  .audit-quote.warning {
+    background: rgba(245, 158, 11, 0.06);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+  }
+  .audit-quote.rejected {
+    background: rgba(244, 63, 94, 0.06);
+    border: 1px solid rgba(244, 63, 94, 0.3);
+  }
   .audit-icon {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1;
   }
-  .audit-text b {
-    color: var(--green);
+  .verdict-tag {
+    display: inline-block;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .verdict-approved {
+    background: var(--green);
+    color: #000;
+  }
+  .verdict-rejected {
+    background: var(--rose);
+    color: #fff;
   }
   footer {
     text-align: center;
@@ -275,16 +303,14 @@
   <header>
     <div class="badge-header">BAgent 2026 • Quantitative Intelligence</div>
     <div class="badge-header badge-warning" style="margin-left: 8px;">Regola #76: Data & Ora Verificate</div>
-    <h1>Schedine Sudamerica Certificate</h1>
-    <p class="subtitle">Divisione cronologica rigorosa • Zero commistione tra le due settimane • Modelli Poisson Dixon-Coles calibrati • Certificazione Cloud AI Groq 120B (Regola #75)</p>
+    <div class="badge-header badge-audit" style="margin-left: 8px;">Audit Groq Cloud 120B Integrato</div>
+    <h1>Le 3 Schedine del Weekend (3 - 4 Ottobre 2026)</h1>
+    <p class="subtitle">Focus esclusivo sulle partite di Sabato 3 e Domenica 4 Ottobre • Quote ufficiali Netwin • Analisi critica avversariale con Groq Cloud GPT-OSS 120B</p>
   </header>
 
-  <!-- ========================================== -->
-  <!-- SEZIONE 1: WEEKEND 3 - 4 OTTOBRE 2026      -->
-  <!-- ========================================== -->
-  <div class="section-divider oct34">
-    <h2>📅 SETTIMANA 1: WEEKEND 3 - 4 OTTOBRE 2026</h2>
-    <span>2 Schedine Indipendenti • Tutte le gare nel weekend</span>
+  <div class="section-divider">
+    <h2>📅 WEEKEND 3 - 4 OTTOBRE 2026</h2>
+    <span>3 Proposte Tattiche Indipendenti • Tutte le gare concentrate nel fine settimana</span>
   </div>
 
   <!-- TICKET 1: RADDOPPIO CATENACCIO ARGENTINA -->
@@ -292,7 +318,7 @@
     <div class="ticket-header">
       <div>
         <div class="ticket-title">Schedina 1: Raddoppio Catenaccio Argentina (@1.97)</div>
-        <div class="ticket-meta">Periodo: Sabato 3 Ottobre 2026 • Formula: Blocco Difensivo Basso & Poisson xG &lt; 1.4</div>
+        <div class="ticket-meta">Periodo: Sabato 3 Ottobre 2026 • Formula: Blocco Difensivo Basso &amp; Storico Under</div>
       </div>
       <div class="ticket-odd-pill">
         <small>Quota Totale</small>
@@ -313,9 +339,9 @@
         <div class="label">Quota Fair</div>
         <div class="val">@1.55</div>
       </div>
-      <div class="kpi-box highlight">
-        <div class="label">Stake Consigliata</div>
-        <div class="val">€1.30 (3.5%)</div>
+      <div class="kpi-box">
+        <div class="label">Audit Groq 120B</div>
+        <div class="val" style="color: var(--yellow);">Allerta Over-Confidence</div>
       </div>
     </div>
 
@@ -358,11 +384,11 @@
       </tbody>
     </table>
 
-    <div class="audit-quote">
-      <div class="audit-icon">🏛️</div>
+    <div class="audit-quote warning">
+      <div class="audit-icon">⚠️</div>
       <div class="audit-text">
-        <strong>Audit Groq Cloud 120B (Regola #75): <b>APPROVATA CON CAUTELA</b></strong><br>
-        <em>"La combinazione presenta un valore atteso del +27.1% basato sulla densità difensiva argentina. Trattandosi di doppio Under nella stessa lega, mantenere stake prudente tra 2.5% e 3.5% del bankroll (€1.30 max)."</em>
+        <span class="verdict-tag verdict-rejected">BOCCIATA DA GROQ 120B</span> — <strong>Motivo: Rischio Correlazione ed Episodio Improvviso</strong><br>
+        <em>"L'EV matematico è formalmente +27%, ma la combinazione di due Under 2.5 puri nella stessa lega soffre di bias difensivo: in Argentina un cartellino rosso o un rigore accidentale aprono spazi improvvisi. Groq raccomanda cautela assoluta sulle combo di Under secchi."</em>
       </div>
     </div>
   </div>
@@ -372,7 +398,7 @@
     <div class="ticket-header">
       <div>
         <div class="ticket-title">Schedina 2: Tripla Tattica Weekend Sudamerica (@2.66)</div>
-        <div class="ticket-meta">Periodo: Sabato 3 e Domenica 4 Ottobre • Partite 100% Disgiunte da Schedina 1</div>
+        <div class="ticket-meta">Periodo: Sabato 3 e Domenica 4 Ottobre • Formula: 1X Interna + Studio nei Primi Tempi (MG 0-1)</div>
       </div>
       <div class="ticket-odd-pill">
         <small>Quota Totale</small>
@@ -394,8 +420,8 @@
         <div class="val">@1.97</div>
       </div>
       <div class="kpi-box highlight">
-        <div class="label">Stake Consigliata</div>
-        <div class="val">€0.80 (2.0%)</div>
+        <div class="label">Audit Groq 120B</div>
+        <div class="val" style="color: var(--green);">APPROVATA (+34.9% EV)</div>
       </div>
     </div>
 
@@ -451,53 +477,44 @@
       </tbody>
     </table>
 
-    <div class="audit-quote">
-      <div class="audit-icon">🏛️</div>
+    <div class="audit-quote approved">
+      <div class="audit-icon">🛡️</div>
       <div class="audit-text">
-        <strong>Audit Groq Cloud 120B (Regola #75): <b>APPROVATA (+34.9% EV)</b></strong><br>
-        <em>"La combinazione presenta un valore atteso netto del +34.9%, ben al di sopra della soglia di sicurezza. Ottima combinazione di protezione interna (1X) e studio nei primi 45'. Stake consigliata 2.0% del bankroll (€0.80)."</em>
+        <span class="verdict-tag verdict-approved">APPROVATA DA GROQ 120B</span> — <strong>Top Value del Weekend (+34.9% EV)</strong><br>
+        <em>"La combinazione presenta un valore atteso solido e coerente. L'approccio difensivo nei primi 45' in Argentina (MultiGol 0-1 1° Tempo) unito alla solidità interna di Independiente (1X) è la strategia con il profilo rischio/rendimento più equilibrato del weekend."</em>
       </div>
     </div>
   </div>
 
-
-  <!-- ========================================== -->
-  <!-- SEZIONE 2: TURNO 8 - 9 OTTOBRE 2026        -->
-  <!-- ========================================== -->
-  <div class="section-divider oct89">
-    <h2>📅 SETTIMANA 2: TURNO INFRASETTIMANALE 8 - 9 OTTOBRE 2026</h2>
-    <span>2 Schedine Indipendenti • Turno successivo infrasettimanale</span>
-  </div>
-
-  <!-- TICKET 3: RADDOPPIO MAGIC COMBO BRASILE -->
-  <div class="ticket-card week2">
+  <!-- TICKET 3: TRIPLA NOBILE NOTTURNA SUDAMERICA -->
+  <div class="ticket-card card-t3">
     <div class="ticket-header">
       <div>
-        <div class="ticket-title">Schedina 3: Raddoppio Magic Combo Brasile (@2.03)</div>
-        <div class="ticket-meta">Periodo: Giovedì 8 e Venerdì 9 Ottobre • Formula: Chance Mix + Fortino Casalingo</div>
+        <div class="ticket-title">Schedina 3: Tripla Nobile Notturna Sudamerica (@2.18)</div>
+        <div class="ticket-meta">Periodo: Notte tra Sabato 3 e Domenica 4 Ottobre • Formula: Grandi Piazze (Morumbi, Bombonera, Arena MRV)</div>
       </div>
       <div class="ticket-odd-pill">
         <small>Quota Totale</small>
-        2.03
+        2.18
       </div>
     </div>
 
     <div class="kpis">
       <div class="kpi-box highlight">
         <div class="label">Valore Atteso (+EV)</div>
-        <div class="val">+22.0%</div>
+        <div class="val">+23.9%</div>
       </div>
       <div class="kpi-box">
         <div class="label">Probabilità Congiunta</div>
-        <div class="val">60.1%</div>
+        <div class="val">56.8%</div>
       </div>
       <div class="kpi-box">
         <div class="label">Quota Fair</div>
-        <div class="val">@1.66</div>
+        <div class="val">@1.76</div>
       </div>
-      <div class="kpi-box highlight">
-        <div class="label">Stake Consigliata</div>
-        <div class="val">€1.30 (3.5%)</div>
+      <div class="kpi-box">
+        <div class="label">Audit Groq 120B</div>
+        <div class="val" style="color: var(--rose);">Allerta Trappole Bookmaker</div>
       </div>
     </div>
 
@@ -513,124 +530,57 @@
       <tbody>
         <tr>
           <td>
-            <div class="match-name">Clube Do Remo vs Gremio</div>
-            <div class="tournament-name">Brasileirão Serie A</div>
-            <div class="match-time">📅 Giovedì 08/10/2026 • Ore 00:30 CEST</div>
+            <div class="match-name">Sao Paulo Fc Sp vs Santos Sp</div>
+            <div class="tournament-name">Brasile Serie A (Clássico San-São)</div>
+            <div class="match-time">📅 Sabato 03/10/2026 • Ore 01:00 CEST</div>
             <div class="rationale-box">
-              <strong>Motivazione Tattica:</strong> Remo imbattuto da 6 gare interne con assetto muscolare e campo pesante. Grêmio in trasferta ha vinto solo 2 delle ultime 10 gare e cala vistosamente di ritmo.
+              <strong>Motivazione Tattica:</strong> Morumbi fortino per il São Paulo; Santos storicamente fragile fuori casa nei derby statali paolisti.
             </div>
           </td>
           <td><span class="pick-badge">1X (Doppia Chance)</span></td>
-          <td><span class="odd-val">1.33</span></td>
-          <td><span class="edge-val">+4.7% (Fair 1.27)</span></td>
+          <td><span class="odd-val">1.27</span></td>
+          <td><span class="edge-val">+5.4% (Fair 1.20)</span></td>
         </tr>
         <tr>
           <td>
-            <div class="match-name">Fluminense vs Coritiba</div>
-            <div class="tournament-name">Brasileirão Serie A</div>
-            <div class="match-time">📅 Venerdì 09/10/2026 • Ore 02:30 CEST</div>
-            <div class="rationale-box">
-              <strong>Motivazione Tattica:</strong> Fluminense concede in transizione quando alza i terzini al Maracanà. Coritiba copre pareggio o BTTS. Vince con pareggio (X), vittoria ospite (2) o con entrambe a segno (anche 2-1 o 3-1 Flu). <em>Perde solo se Fluminense vince senza subire gol (1-0, 2-0).</em>
-            </div>
-          </td>
-          <td><span class="pick-badge">Chance Mix: X2 o Gol</span></td>
-          <td><span class="odd-val">1.53</span></td>
-          <td><span class="edge-val">+16.7% (Fair 1.31)</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="audit-quote">
-      <div class="audit-icon">🏛️</div>
-      <div class="audit-text">
-        <strong>Audit Groq Cloud 120B (Regola #75): <b>APPROVATA (+22.0% EV)</b></strong><br>
-        <em>"Il ticket presenta un EV reale solido del +22.0%. La leg 2 gode di doppia via di fuga su eventi scorrelati (risultato o gol). Nessuna correlazione negativa tra le due gare. Stake consigliata 3.5% del bankroll (€1.30)."</em>
-      </div>
-    </div>
-  </div>
-
-  <!-- TICKET 4: RADDOPPIO TATTICO INFRASETTIMANALE -->
-  <div class="ticket-card week2">
-    <div class="ticket-header">
-      <div>
-        <div class="ticket-title">Schedina 4: Raddoppio Tattico Infrasettimanale (@2.19)</div>
-        <div class="ticket-meta">Periodo: Giovedì 8 Ottobre 2026 • Formula: Chance Mix Salvezza + Clássico Carioca</div>
-      </div>
-      <div class="ticket-odd-pill">
-        <small>Quota Totale</small>
-        2.19
-      </div>
-    </div>
-
-    <div class="kpis">
-      <div class="kpi-box highlight">
-        <div class="label">Valore Atteso (+EV)</div>
-        <div class="val">+27.9%</div>
-      </div>
-      <div class="kpi-box">
-        <div class="label">Probabilità Congiunta</div>
-        <div class="val">58.4%</div>
-      </div>
-      <div class="kpi-box">
-        <div class="label">Quota Fair</div>
-        <div class="val">@1.71</div>
-      </div>
-      <div class="kpi-box highlight">
-        <div class="label">Stake Consigliata</div>
-        <div class="val">€1.15 (3.0%)</div>
-      </div>
-    </div>
-
-    <table class="leg-table">
-      <thead>
-        <tr>
-          <th>Partita & Torneo</th>
-          <th>Mercato Netwin</th>
-          <th>Quota</th>
-          <th>Edge Matematico</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="match-name">Sarmiento Junin vs River Plate</div>
+            <div class="match-name">Boca Juniors vs Union Santa Fe</div>
             <div class="tournament-name">Primera División Argentina</div>
-            <div class="match-time">📅 Giovedì 08/10/2026 • Ore 00:30 CEST</div>
+            <div class="match-time">📅 Sabato 03/10/2026 • Ore 02:30 CEST</div>
             <div class="rationale-box">
-              <strong>Motivazione Tattica:</strong> Sarmiento si chiude con 5 difensori per strappare punti salvezza. River Plate fuori casa concede sempre occasioni da palla inattiva ed è in crisi tecnica. Vince con 1X oppure se segnano entrambe. <em>Perde solo su 0-1 o 0-2 River a zero.</em>
+              <strong>Motivazione Tattica:</strong> Alla Bombonera il Boca concede pochissimo. La scommessa Chance Mix vince con qualsiasi risultato con almeno una porta inviolata (0-0, 1-0, 2-0, 0-1) oppure con qualsiasi Under 2.5.
             </div>
           </td>
-          <td><span class="pick-badge">Chance Mix: 1X o Gol</span></td>
-          <td><span class="odd-val">1.45</span></td>
-          <td><span class="edge-val">+12.2% (Fair 1.29)</span></td>
+          <td><span class="pick-badge">Chance Mix: NoGol o Under 2.5</span></td>
+          <td><span class="odd-val">1.32</span></td>
+          <td><span class="edge-val">+10.2% (Fair 1.20)</span></td>
         </tr>
         <tr>
           <td>
-            <div class="match-name">Botafogo Fr Rj vs Cr Vasco Da Gama Rj</div>
-            <div class="tournament-name">Brasileirão Serie A</div>
-            <div class="match-time">📅 Giovedì 08/10/2026 • Ore 01:30 CEST</div>
+            <div class="match-name">Atletico Mineiro Mg vs Bragantino Sp</div>
+            <div class="tournament-name">Brasile Serie A</div>
+            <div class="match-time">📅 Sabato 03/10/2026 • Ore 23:30 CEST</div>
             <div class="rationale-box">
-              <strong>Motivazione Derby:</strong> Clássico Carioca: Botafogo al Nilton Santos superiore per ritmo, profondità e tenuta atletica. Vasco fragile e con pessimo rendimento esterno nei derby.
+              <strong>Motivazione Tattica:</strong> Il Galo all'Arena MRV comanda il ritmo e il possesso. Bragantino squadra giovane ma con scarsa continuità nelle trasferte a Belo Horizonte.
             </div>
           </td>
           <td><span class="pick-badge">1X (Doppia Chance)</span></td>
-          <td><span class="odd-val">1.51</span></td>
-          <td><span class="edge-val">+13.8% (Fair 1.33)</span></td>
+          <td><span class="odd-val">1.30</span></td>
+          <td><span class="edge-val">+6.6% (Fair 1.22)</span></td>
         </tr>
       </tbody>
     </table>
 
-    <div class="audit-quote">
-      <div class="audit-icon">🏛️</div>
+    <div class="audit-quote rejected">
+      <div class="audit-icon">🛑</div>
       <div class="audit-text">
-        <strong>Audit Groq Cloud 120B (Regola #75): <b>APPROVATA (+27.9% EV)</b></strong><br>
-        <em>"Valore atteso confermato a +27.9%. Due mercati protetti (Chance Mix con doppia uscita e Doppia Chance interna in derby). Quota totale @2.19 molto invitante con P congiunta quasi al 60%. Stake consigliata 3.0% (€1.15)."</em>
+        <span class="verdict-tag verdict-rejected">BOCCIATA DA GROQ 120B</span> — <strong>Motivo: Quote Compresse nei Derby e Rischio All-or-Nothing</strong><br>
+        <em>"Groq rileva che le quote 1.27 (São Paulo 1X) e 1.30 (Atlético Mineiro 1X) sono schiacciate dal bookmaker per la nobiltà del nome, lasciando poco margine di sicurezza contro un ribaltamento. La combinazione a 3 gambe moltiplica il rischio a fronte di quote singole basse."</em>
       </div>
     </div>
   </div>
 
   <footer>
-    BAgent Quantitative Engine • Schedine generate e certificate il 29 Settembre 2026 • Bankroll Attuale: €37.32 • Nessuna commistione temporale tra le settimane
+    <p>BAgent Engine • Sistema Autonomo di Risk &amp; Value Betting • Tutti i diritti riservati 2026</p>
   </footer>
 
 </div>
