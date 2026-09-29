@@ -7,7 +7,7 @@
     {
       "id": "TICKET_RADDOPPIO_WEEKEND_03OTT",
       "title": "Schedina 1: Raddoppio Primi Tempi Blindati (@1.86)",
-      "label": "Futura",
+      "label": "Certificata (EV +40.8%)",
       "odds": "1.86×",
       "legs": [
         {
@@ -21,52 +21,6 @@
           "match": "Atletico Tucuman vs Barracas Central",
           "pick": "MultiGol 0-1 1° Tempo",
           "odd": "1.35"
-        }
-      ]
-    },
-    {
-      "id": "TICKET_TRIPLA_WEEKEND_03_04OTT",
-      "title": "Schedina 2: Tripla Tattica Weekend Sudamerica (@2.66)",
-      "label": "Futura",
-      "odds": "2.66×",
-      "legs": [
-        {
-          "when": "03/10 00:15 CEST",
-          "match": "Independiente vs Instituto Cordoba",
-          "pick": "1X (Doppia Chance)",
-          "odd": "1.32"
-        },
-        {
-          "when": "04/10 00:15 CEST",
-          "match": "Argentinos Juniors vs Tigre",
-          "pick": "MultiGol 0-1 1° Tempo",
-          "odd": "1.41"
-        },
-        {
-          "when": "04/10 22:00 CEST",
-          "match": "Talleres De Cordoba vs Belgrano",
-          "pick": "MultiGol 0-1 1° Tempo",
-          "odd": "1.43"
-        }
-      ]
-    },
-    {
-      "id": "TICKET_RADDOPPIO_BOMBONERA_GALO_03OTT",
-      "title": "Schedina 3: Raddoppio Blindato Bombonera & Galo (@2.09)",
-      "label": "Futura",
-      "odds": "2.09×",
-      "legs": [
-        {
-          "when": "03/10 02:30 CEST",
-          "match": "Boca Juniors vs Union Santa Fe",
-          "pick": "Chance Mix: NoGol o Under 2.5",
-          "odd": "1.32"
-        },
-        {
-          "when": "03/10 23:30 CEST",
-          "match": "Atletico Mineiro Mg vs Bragantino Sp",
-          "pick": "Combo: 1X + Under 3.5",
-          "odd": "1.58"
         }
       ]
     }

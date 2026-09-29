@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BAgent — Le 3 Schedine del Weekend (3 - 4 Ottobre 2026)</title>
+<title>BAgent — Verdetto Strict Validator Weekend (3 - 4 Ottobre 2026)</title>
 <style>
   :root {
     --bg: #090e17;
@@ -14,7 +14,6 @@
     --cyan: #38bdf8;
     --green: #10b981;
     --yellow: #f59e0b;
-    --purple: #a855f7;
     --rose: #f43f5e;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,8 +36,8 @@
   }
   .badge-header {
     display: inline-block;
-    background: rgba(56, 189, 248, 0.15);
-    color: var(--cyan);
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green);
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
@@ -46,16 +45,6 @@
     padding: 4px 12px;
     border-radius: 999px;
     margin-bottom: 12px;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-  }
-  .badge-warning {
-    background: rgba(245, 158, 11, 0.12);
-    color: var(--yellow);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-  }
-  .badge-audit {
-    background: rgba(16, 185, 129, 0.12);
-    color: var(--green);
     border: 1px solid rgba(16, 185, 129, 0.3);
   }
   h1 {
@@ -63,7 +52,7 @@
     font-weight: 800;
     letter-spacing: -0.5px;
     margin-bottom: 8px;
-    background: linear-gradient(135deg, #fff 40%, var(--cyan) 100%);
+    background: linear-gradient(135deg, #fff 40%, var(--green) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -74,9 +63,9 @@
     margin: 0 auto;
     line-height: 1.6;
   }
-  .rule-banner {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(56, 189, 248, 0.08));
-    border: 1px solid rgba(245, 158, 11, 0.4);
+  .summary-banner {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(56, 189, 248, 0.08));
+    border: 1px solid rgba(16, 185, 129, 0.4);
     border-radius: 14px;
     padding: 18px 20px;
     margin-bottom: 28px;
@@ -84,17 +73,17 @@
     gap: 16px;
     align-items: flex-start;
   }
-  .rule-banner-icon {
+  .summary-banner-icon {
     font-size: 32px;
     line-height: 1;
   }
-  .rule-banner-text h3 {
-    font-size: 15px;
+  .summary-banner-text h3 {
+    font-size: 16px;
     font-weight: 800;
-    color: var(--yellow);
+    color: var(--green);
     margin-bottom: 6px;
   }
-  .rule-banner-text p {
+  .summary-banner-text p {
     font-size: 13px;
     color: #cbd5e1;
     line-height: 1.5;
@@ -109,11 +98,21 @@
     position: relative;
     overflow: hidden;
   }
-  .ticket-card::before {
+  .ticket-card.approved::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--cyan), var(--green));
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--green), var(--cyan));
+  }
+  .ticket-card.rejected::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--rose), var(--yellow));
+  }
+  .ticket-card.rejected {
+    opacity: 0.88;
+    border-color: rgba(244, 63, 94, 0.3);
   }
   .ticket-header {
     display: flex;
@@ -136,15 +135,22 @@
     margin-top: 4px;
   }
   .ticket-odd-pill {
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.3);
     padding: 8px 18px;
     border-radius: 12px;
     text-align: right;
     font-size: 24px;
     font-weight: 900;
-    color: var(--cyan);
     line-height: 1;
+  }
+  .ticket-odd-pill.green-pill {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: var(--green);
+  }
+  .ticket-odd-pill.rose-pill {
+    background: rgba(244, 63, 94, 0.15);
+    border: 1px solid rgba(244, 63, 94, 0.4);
+    color: var(--rose);
   }
   .ticket-odd-pill small {
     display: block;
@@ -166,9 +172,13 @@
     border-radius: 10px;
     padding: 12px 14px;
   }
-  .kpi-box.highlight {
+  .kpi-box.highlight-green {
     background: rgba(16, 185, 129, 0.08);
     border-color: rgba(16, 185, 129, 0.25);
+  }
+  .kpi-box.highlight-rose {
+    background: rgba(244, 63, 94, 0.08);
+    border-color: rgba(244, 63, 94, 0.25);
   }
   .kpi-box .label {
     font-size: 11px;
@@ -182,8 +192,11 @@
     font-weight: 800;
     color: #fff;
   }
-  .kpi-box.highlight .val {
+  .kpi-box.highlight-green .val {
     color: var(--green);
+  }
+  .kpi-box.highlight-rose .val {
+    color: var(--rose);
   }
   .leg-table {
     width: 100%;
@@ -235,9 +248,6 @@
     color: #94a3b8;
     line-height: 1.4;
   }
-  .rationale-box strong {
-    color: #e2e8f0;
-  }
   .pick-badge {
     display: inline-block;
     background: rgba(56, 189, 248, 0.15);
@@ -253,26 +263,17 @@
     font-weight: 800;
     color: #fff;
   }
-  .edge-tag-pos {
+  .tag-passed {
     color: var(--green);
     font-weight: 700;
     font-size: 12px;
   }
-  .edge-warning-pill {
-    display: inline-block;
-    background: rgba(245, 158, 11, 0.15);
-    color: var(--yellow);
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-size: 11px;
+  .tag-blocked {
+    color: var(--rose);
     font-weight: 700;
-    margin-top: 4px;
-    line-height: 1.3;
+    font-size: 12px;
   }
   .audit-quote {
-    background: rgba(16, 185, 129, 0.05);
-    border-left: 3px solid var(--green);
     border-radius: 0 10px 10px 0;
     padding: 14px 18px;
     font-size: 13px;
@@ -281,9 +282,13 @@
     gap: 12px;
     align-items: flex-start;
   }
-  .audit-quote.warning-border {
-    background: rgba(245, 158, 11, 0.05);
-    border-left: 3px solid var(--yellow);
+  .audit-quote.approved-box {
+    background: rgba(16, 185, 129, 0.06);
+    border-left: 4px solid var(--green);
+  }
+  .audit-quote.rejected-box {
+    background: rgba(244, 63, 94, 0.06);
+    border-left: 4px solid var(--rose);
   }
   .audit-icon {
     font-size: 20px;
@@ -291,8 +296,6 @@
   }
   .verdict-tag {
     display: inline-block;
-    background: rgba(16, 185, 129, 0.2);
-    color: var(--green);
     font-weight: 800;
     font-size: 11px;
     padding: 2px 8px;
@@ -300,9 +303,13 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-  .verdict-tag.warning {
-    background: rgba(245, 158, 11, 0.2);
-    color: var(--yellow);
+  .verdict-tag.green {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--green);
+  }
+  .verdict-tag.rose {
+    background: rgba(244, 63, 94, 0.2);
+    color: var(--rose);
   }
   footer {
     text-align: center;
@@ -322,9 +329,6 @@
     font-size: 13px;
     margin-bottom: 20px;
   }
-  .nav-back:hover {
-    text-decoration: underline;
-  }
 </style>
 </head>
 <body>
@@ -333,41 +337,45 @@
   <a href="index.html" class="nav-back">‹ Torna alla Dashboard Generale</a>
 
   <header>
-    <div class="badge-header">Weekend 3 - 4 Ottobre 2026 • Validazione Ufficiale BAgent</div>
-    <h1>Le 3 Schedine del Weekend</h1>
+    <div class="badge-header">Verifica Conclusiva Motore Quantitativo • 3 - 4 Ottobre 2026</div>
+    <h1>Audit Ufficiale Strict Validator</h1>
     <p class="subtitle">
-      Proposte sbloccate in applicazione della direttiva utente: l'Edge matematico negativo funge da <strong>warning informativo di rischio</strong> trasparente senza bloccare l'approvazione delle schedine certificate dal ciclo dialettico con Groq 120B.
+      Riconciliazione matematica tra il motore Poisson (split xG 1° Tempo) e il database storico FootyStats.
+      <br><strong>1 Schedina Certificata e Prenotabile</strong> • <strong>2 Schedine Bocciate Tassativamente per Probabilità &lt; 72%</strong>.
     </p>
   </header>
 
-  <!-- BANNER REGOLA MODIFICATA -->
-  <div class="rule-banner">
-    <div class="rule-banner-icon">⚠️</div>
-    <div class="rule-banner-text">
-      <h3>Regola Modificata: Edge Matematico come Warning Informativo (Non Bloccante)</h3>
+  <!-- BANNER RIEPILOGATIVO -->
+  <div class="summary-banner">
+    <div class="summary-banner-icon">🎯</div>
+    <div class="summary-banner-text">
+      <h3>Esito Validazione: Solo la Schedina 1 rispetta la soglia di sicurezza del 72%</h3>
       <p>
-        In conformità con il mandato operativo, un valore di edge negativo o inferiore alla soglia (+4%) calcolato sui dati storici <strong>NON boccia più automaticamente la schedina</strong>. L'informazione viene esposta chiaramente con un badge di warning di rischio per consentire una valutazione consapevole del rapporto quota/probabilità reale, mentre la decisione qualitativa e dialettica (Groq 120B) rimane sovrana.
+        La soglia minima di probabilità per ciascuna selezione in multipla (<strong>&ge; 72%</strong>) è la regola aurea per evitare il crollo della probabilità congiunta e la rovina del bankroll.
+        <br>• <strong>Schedina 1</strong>: P=86.2% e 87.8% (&gt; 72%), EV congiunto <strong>+40.8%</strong>. Supera tutti i Gate: <strong>CERTIFICATA</strong>.
+        <br>• <strong>Schedina 2</strong>: Independiente P=71.3% (&lt; 72%). Bloccata in Fase 6. <strong>NON PRENOTABILE</strong>.
+        <br>• <strong>Schedina 3</strong>: Boca P=61.9% e Mineiro P=53.8% (&lt; 72%). Prodotto congiunto 33.3%, EV reale <strong>-30.4%</strong>. <strong>BOCCIATA TASSATIVAMENTE</strong>.
       </p>
     </div>
   </div>
 
-  <!-- TICKET 1: RADDOPPIO PRIMI TEMPI BLINDATI -->
-  <div class="ticket-card">
+  <!-- TICKET 1: CERTIFICATO -->
+  <div class="ticket-card approved">
     <div class="ticket-header">
       <div>
         <div class="ticket-title">Schedina 1: Raddoppio Primi Tempi Blindati (@1.86)</div>
         <div class="ticket-meta">Periodo: Sabato 3 Ottobre • Mercato: MultiGol 0-1 1° Tempo (Poisson xG Split 0.45)</div>
       </div>
-      <div class="ticket-odd-pill">
+      <div class="ticket-odd-pill green-pill">
         <small>Quota Totale</small>
         1.86
       </div>
     </div>
 
     <div class="kpis">
-      <div class="kpi-box highlight">
-        <div class="label">Valore Atteso (+EV)</div>
-        <div class="val">+26.7%</div>
+      <div class="kpi-box highlight-green">
+        <div class="label">Valore Atteso Reale (+EV)</div>
+        <div class="val">+40.8%</div>
       </div>
       <div class="kpi-box">
         <div class="label">Probabilità Congiunta</div>
@@ -377,9 +385,9 @@
         <div class="label">Quota Fair Stimata</div>
         <div class="val">@1.32</div>
       </div>
-      <div class="kpi-box highlight">
-        <div class="label">Audit Groq 120B</div>
-        <div class="val" style="color: var(--green);">🟢 APPROVATA (+26.7% EV)</div>
+      <div class="kpi-box highlight-green">
+        <div class="label">Verdetto Validatore</div>
+        <div class="val" style="color: var(--green);">🟢 CERTIFICATA &amp; APPROVATA</div>
       </div>
     </div>
 
@@ -389,7 +397,7 @@
           <th>Partita &amp; Torneo</th>
           <th>Mercato Netwin</th>
           <th>Quota</th>
-          <th>Valutazione Edge &amp; Rischio</th>
+          <th>Esito Validatore</th>
         </tr>
       </thead>
       <tbody>
@@ -399,14 +407,15 @@
             <div class="tournament-name">Primera División Argentina</div>
             <div class="match-time">📅 Sabato 03/10/2026 • Ore 19:45 CEST</div>
             <div class="rationale-box">
-              <strong>Motivazione Tattica:</strong> Difese arcigne, prima mezz'ora di studio. San Lorenzo in trasferta concede meno di 0.4 xG nel primo tempo.
+              Difese arcigne e primo tempo di studio. San Lorenzo in trasferta concede meno di 0.4 xG nei primi 45'.
             </div>
           </td>
           <td><span class="pick-badge">MultiGol 0-1 1° Tempo</span></td>
           <td><span class="odd-val">1.38</span></td>
           <td>
-            <span class="edge-tag-pos">+13.2% Edge Poisson</span><br>
-            <small style="color: var(--text-muted);">P stimata: 86.2% | Fair: @1.22</small>
+            <span class="tag-passed">🟢 P = 86.2% (&gt; 72%)</span><br>
+            <strong style="color: var(--green);">Edge Matematico: +19.0%</strong><br>
+            <small style="color: var(--text-muted);">Quota Fair: @1.16</small>
           </td>
         </tr>
         <tr>
@@ -415,57 +424,58 @@
             <div class="tournament-name">Primera División Argentina</div>
             <div class="match-time">📅 Sabato 03/10/2026 • Ore 22:00 CEST</div>
             <div class="rationale-box">
-              <strong>Motivazione Tattica:</strong> Barracas blocco ultra-basso in trasferta; ritmi lenti e falli tattici sistematici che spezzettano la prima frazione.
+              Barracas blocco ultra-basso in trasferta; ritmi lenti e falli tattici che congelano la prima frazione.
             </div>
           </td>
           <td><span class="pick-badge">MultiGol 0-1 1° Tempo</span></td>
           <td><span class="odd-val">1.35</span></td>
           <td>
-            <span class="edge-tag-pos">+12.0% Edge Poisson</span><br>
-            <small style="color: var(--text-muted);">P stimata: 87.8% | Fair: @1.20</small>
+            <span class="tag-passed">🟢 P = 87.8% (&gt; 72%)</span><br>
+            <strong style="color: var(--green);">Edge Matematico: +18.5%</strong><br>
+            <small style="color: var(--text-muted);">Quota Fair: @1.14</small>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <div class="audit-quote">
+    <div class="audit-quote approved-box">
       <div class="audit-icon">🛡️</div>
       <div class="audit-text">
-        <span class="verdict-tag">APPROVATA DA GROQ 120B</span> — <strong>Rettifica Dialettica Riuscita (+26.7% EV)</strong><br>
-        <em>"L'EV combinato di +26.7% è solido e sfrutta la tendenza reale della Primera División Argentina, dove oltre l'80% delle gare va all'intervallo su 0-0 o 1-0. Neutralizzato il rischio di ribaltoni o espulsioni nella ripresa che minacciavano l'Under secco a 90 minuti."</em>
+        <span class="verdict-tag green">CERTIFICATA DAL MOTORE &amp; GROQ 120B</span> — <strong>Valore Atteso Straordinario (+40.8% EV)</strong><br>
+        <em>"Entrambe le selezioni superano ampiamente il filtro del 72% (86.2% e 87.8%). Con una probabilità congiunta del 75.7% a fronte di una quota @1.86 su Netwin, questa combinazione offre un margine matematico netto del +40.8%. È l'unica schedina del weekend con piena copertura e certificazione."</em>
       </div>
     </div>
   </div>
 
-  <!-- TICKET 2: TRIPLA TATTICA WEEKEND -->
-  <div class="ticket-card">
+  <!-- TICKET 2: BOCCIATO -->
+  <div class="ticket-card rejected">
     <div class="ticket-header">
       <div>
         <div class="ticket-title">Schedina 2: Tripla Tattica Weekend Sudamerica (@2.66)</div>
-        <div class="ticket-meta">Periodo: Sabato 3 e Domenica 4 Ottobre • Formula: 1X Interna + Studio nei Primi Tempi (MG 0-1)</div>
+        <div class="ticket-meta">Periodo: Sabato 3 e Domenica 4 Ottobre • Formula: 1X Interna + 2 Primi Tempi (MG 0-1)</div>
       </div>
-      <div class="ticket-odd-pill">
+      <div class="ticket-odd-pill rose-pill">
         <small>Quota Totale</small>
         2.66
       </div>
     </div>
 
     <div class="kpis">
-      <div class="kpi-box highlight">
+      <div class="kpi-box highlight-rose">
         <div class="label">Valore Atteso (+EV)</div>
-        <div class="val">+34.9%</div>
+        <div class="val">+17.8%</div>
       </div>
       <div class="kpi-box">
-        <div class="label">Probabilità Congiunta</div>
-        <div class="val">50.7%</div>
+        <div class="label">Probabilità Congiunta Reale</div>
+        <div class="val">44.3%</div>
       </div>
       <div class="kpi-box">
         <div class="label">Quota Fair Stimata</div>
-        <div class="val">@1.97</div>
+        <div class="val">@2.26</div>
       </div>
-      <div class="kpi-box highlight">
-        <div class="label">Audit Groq 120B</div>
-        <div class="val" style="color: var(--green);">🟢 APPROVATA (+34.9% EV)</div>
+      <div class="kpi-box highlight-rose">
+        <div class="label">Verdetto Validatore</div>
+        <div class="val" style="color: var(--rose);">🔴 BOCCIATA (P &lt; 72%)</div>
       </div>
     </div>
 
@@ -475,7 +485,7 @@
           <th>Partita &amp; Torneo</th>
           <th>Mercato Netwin</th>
           <th>Quota</th>
-          <th>Valutazione Edge &amp; Rischio</th>
+          <th>Esito Validatore</th>
         </tr>
       </thead>
       <tbody>
@@ -484,15 +494,13 @@
             <div class="match-name">Independiente vs Instituto Cordoba</div>
             <div class="tournament-name">Primera División Argentina</div>
             <div class="match-time">📅 Sabato 03/10/2026 • Ore 00:15 CEST</div>
-            <div class="rationale-box">
-              <strong>Motivazione Tattica:</strong> Independiente al Libertadores de América imbattuto nelle ultime uscite interne; Instituto squadra da ripartenza che raramente vince lontano da Córdoba.
-            </div>
           </td>
           <td><span class="pick-badge">1X (Doppia Chance)</span></td>
           <td><span class="odd-val">1.32</span></td>
           <td>
-            <div class="edge-warning-pill">⚠️ Edge Storico: -5.9%</div><br>
-            <small style="color: var(--text-muted);">P FootyStats: 71.3% | Fair: @1.40<br><em>Warning informativo: approvata per solidità interna.</em></small>
+            <span class="tag-blocked">🔴 P = 71.3% (&lt; 72.0% soglia)</span><br>
+            <span style="color: var(--rose);">Edge: -5.9% (Quota Fair @1.40)</span><br>
+            <small style="color: var(--rose); font-weight: bold;">BLOCCATA: violazione soglia minima di sicurezza.</small>
           </td>
         </tr>
         <tr>
@@ -500,15 +508,12 @@
             <div class="match-name">Argentinos Juniors vs Tigre</div>
             <div class="tournament-name">Primera División Argentina</div>
             <div class="match-time">📅 Domenica 04/10/2026 • Ore 00:15 CEST</div>
-            <div class="rationale-box">
-              <strong>Motivazione 1° Tempo:</strong> A La Paternal campo corto e stretto che favorisce pressing asfissiante e chiusure anticipate. Nei primi 45' la media gol è inferiore a 0.35.
-            </div>
           </td>
           <td><span class="pick-badge">MultiGol 0-1 1° Tempo</span></td>
           <td><span class="odd-val">1.41</span></td>
           <td>
-            <span class="edge-tag-pos">+13.0% Edge Poisson</span><br>
-            <small style="color: var(--text-muted);">P stimata: 79.2% | Fair: @1.25</small>
+            <span class="tag-passed">🟢 P = 79.2% (&gt; 72%)</span><br>
+            <strong style="color: var(--green);">Edge: +11.7%</strong>
           </td>
         </tr>
         <tr>
@@ -516,58 +521,55 @@
             <div class="match-name">Talleres De Cordoba vs Belgrano</div>
             <div class="tournament-name">Primera División Argentina</div>
             <div class="match-time">📅 Domenica 04/10/2026 • Ore 22:00 CEST</div>
-            <div class="rationale-box">
-              <strong>Motivazione Derby:</strong> Clásico Cordobés: altissima tensione agonistica, fallosità e ritmi bloccati nella prima frazione. Nessuna delle due formazioni rischia nei primi 45'.
-            </div>
           </td>
           <td><span class="pick-badge">MultiGol 0-1 1° Tempo</span></td>
           <td><span class="odd-val">1.43</span></td>
           <td>
-            <span class="edge-tag-pos">+12.3% Edge Poisson</span><br>
-            <small style="color: var(--text-muted);">P stimata: 78.5% | Fair: @1.27</small>
+            <span class="tag-passed">🟢 P = 78.5% (&gt; 72%)</span><br>
+            <strong style="color: var(--green);">Edge: +12.3%</strong>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <div class="audit-quote warning-border">
-      <div class="audit-icon">🛡️</div>
+    <div class="audit-quote rejected-box">
+      <div class="audit-icon">🛑</div>
       <div class="audit-text">
-        <span class="verdict-tag">APPROVATA DA GROQ 120B</span> — <span class="verdict-tag warning">CON AVVISO EDGE SU INDEPENDIENTE</span><br>
-        <em>"La combinazione presenta un valore atteso complessivo robusto (+34.9% EV). L'approccio difensivo nei primi 45' in Argentina (MultiGol 0-1 1° Tempo) unito alla solidità interna di Independiente (1X) è la strategia con il profilo rischio/rendimento più equilibrato. L'edge negativo di Independiente sul database grezzo (-5.9%) è un margine di banco noto e accettabile data l'alta affidabilità tattica casalinga del Rojo."</em>
+        <span class="verdict-tag rose">BOCCIATA DAL VALIDATORE (GATE 6)</span> — <strong>NON PRENOTARE</strong><br>
+        <em>"L'1X di Independiente ha una probabilità reale del 71.3%, sotto la soglia minima del 72%. Il prodotto delle 3 selezioni scende a un debole 44.3%. Il validatore blocca il ticket in conformità con le regole quantitative di conservazione del capitale."</em>
       </div>
     </div>
   </div>
 
-  <!-- TICKET 3: RADDOPPIO BLINDATO BOMBONERA & GALO -->
-  <div class="ticket-card">
+  <!-- TICKET 3: BOCCIATO TASSATIVAMENTE -->
+  <div class="ticket-card rejected">
     <div class="ticket-header">
       <div>
-        <div class="ticket-title">Schedina 3: Raddoppio Blindato Bombonera &amp; Galo (@2.09)</div>
-        <div class="ticket-meta">Periodo: Notte tra Sabato 3 e Domenica 4 Ottobre • Formula: Paracadute Bombonera + Fortino Arena MRV</div>
+        <div class="ticket-title">Schedina 3: Raddoppio Bombonera &amp; Galo (@2.09)</div>
+        <div class="ticket-meta">Periodo: Sabato 3 Ottobre • Formula: Chance Mix Boca + Combo Mineiro</div>
       </div>
-      <div class="ticket-odd-pill">
+      <div class="ticket-odd-pill rose-pill">
         <small>Quota Totale</small>
         2.09
       </div>
     </div>
 
     <div class="kpis">
-      <div class="kpi-box highlight">
-        <div class="label">Valore Atteso (+EV)</div>
-        <div class="val">+26.1%</div>
+      <div class="kpi-box highlight-rose">
+        <div class="label">Valore Atteso Reale</div>
+        <div class="val">-30.4% EV</div>
       </div>
-      <div class="kpi-box">
-        <div class="label">Probabilità Congiunta</div>
-        <div class="val">60.4%</div>
+      <div class="kpi-box highlight-rose">
+        <div class="label">Probabilità Congiunta Reale</div>
+        <div class="val">33.3%</div>
       </div>
       <div class="kpi-box">
         <div class="label">Quota Fair Stimata</div>
-        <div class="val">@1.66</div>
+        <div class="val">@3.00</div>
       </div>
-      <div class="kpi-box highlight">
-        <div class="label">Audit Groq 120B</div>
-        <div class="val" style="color: var(--green);">🟢 APPROVATA (+26.1% EV)</div>
+      <div class="kpi-box highlight-rose">
+        <div class="label">Verdetto Validatore</div>
+        <div class="val" style="color: var(--rose);">🔴 BOCCIATA TASSATIVAMENTE</div>
       </div>
     </div>
 
@@ -577,7 +579,7 @@
           <th>Partita &amp; Torneo</th>
           <th>Mercato Netwin</th>
           <th>Quota</th>
-          <th>Valutazione Edge &amp; Rischio</th>
+          <th>Esito Validatore</th>
         </tr>
       </thead>
       <tbody>
@@ -586,15 +588,13 @@
             <div class="match-name">Boca Juniors vs Union Santa Fe</div>
             <div class="tournament-name">Primera División Argentina</div>
             <div class="match-time">📅 Sabato 03/10/2026 • Ore 02:30 CEST</div>
-            <div class="rationale-box">
-              <strong>Paracadute Bombonera:</strong> Boca solidissimo in retroguardia. La scommessa vince con qualsiasi NoGol (0-0, 1-0, 2-0, 0-1) oppure con qualsiasi Under 2.5. Perde esclusivamente se entrambe segnano E fanno Over 2.5.
-            </div>
           </td>
           <td><span class="pick-badge">Chance Mix: NoGol o Under 2.5</span></td>
           <td><span class="odd-val">1.32</span></td>
           <td>
-            <div class="edge-warning-pill">⚠️ Edge Grezzo: -18.4%</div><br>
-            <small style="color: var(--text-muted);">Base storica grezza: 61.9% | Poisson combinato: 83.5% (+10.2% EV)<br><em>Warning informativo: paracadute su 6 esiti su 7.</em></small>
+            <span class="tag-blocked">🔴 P = 61.9% (&lt; 72.0% soglia)</span><br>
+            <span style="color: var(--rose);">Edge: -18.3% (Quota Fair @1.62)</span><br>
+            <small style="color: var(--rose); font-weight: bold;">BLOCCATA: probabilità gravemente insufficiente.</small>
           </td>
         </tr>
         <tr>
@@ -602,25 +602,23 @@
             <div class="match-name">Atletico Mineiro Mg vs Bragantino Sp</div>
             <div class="tournament-name">Brasile Serie A</div>
             <div class="match-time">📅 Sabato 03/10/2026 • Ore 23:30 CEST</div>
-            <div class="rationale-box">
-              <strong>Fortino Arena MRV:</strong> Rimosso il derby rischioso San-São. Inserita la Combo 1X + Under 3.5 per il Galo all'Arena MRV: Bragantino sterile fuori e Galo imbattuto in casa.
-            </div>
           </td>
           <td><span class="pick-badge">Combo: 1X + Under 3.5</span></td>
-          <td><span class="odd-val">1.58</span></td>
+          <td><span class="odd-val">1.74</span></td>
           <td>
-            <div class="edge-warning-pill">⚠️ Edge Grezzo: -15.0%</div><br>
-            <small style="color: var(--text-muted);">Base storica grezza: 53.8% | Poisson combinato: 72.4% (+14.5% EV)<br><em>Warning informativo: combo protetta casalinga.</em></small>
+            <span class="tag-blocked">🔴 P = 53.8% (&lt; 72.0% soglia)</span><br>
+            <span style="color: var(--rose);">Edge: -6.4% in cache (Quota Fair @1.86)</span><br>
+            <small style="color: var(--rose); font-weight: bold;">BLOCCATA: probabilità al 53.8% inaccettabile in multipla.</small>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <div class="audit-quote warning-border">
-      <div class="audit-icon">🛡️</div>
+    <div class="audit-quote rejected-box">
+      <div class="audit-icon">🛑</div>
       <div class="audit-text">
-        <span class="verdict-tag">APPROVATA DA GROQ 120B</span> — <span class="verdict-tag warning">CON AVVISO EDGE GREZZO</span><br>
-        <em>"Le quote Netwin presentano un edge calcolato sul modello Poisson combinato molto favorevole (+10% e +14%), sebbene sul dato storico grezzo aggregato il margine del banco risulti elevato. Entrambe le selezioni hanno una singola condizione di perdita molto specifica e a bassa probabilità. Le due partite sono indipendenti (Argentina e Brasile). Scommessa approvata e confermata."</em>
+        <span class="verdict-tag rose">BOCCIATA TASSATIVAMENTE (RISCHIO ELEVATO)</span> — <strong>NON PRENOTARE</strong><br>
+        <em>"Entrambe le selezioni (61.9% e 53.8%) sono lontanissime dalla soglia minima del 72%. La probabilità congiunta è del 33.3%, il che significa perdere 2 volte su 3 per un raddoppio! Con un valore atteso reale di oltre il -30%, questa scommessa è un rischio puro di dispersione del bankroll. Bocciata senza appello."</em>
       </div>
     </div>
   </div>
