@@ -5,23 +5,23 @@
   "present": [],
   "future": [
     {
-      "id": "SCHEDINA_1_ARG_04OTT",
-      "title": "Liga Profesional 4 Ottobre — Raddoppio MultiGol 1°T",
-      "label": "Certificata",
-      "odds": "1.86×",
+      "id": "TICKET_ARG_03OTT",
+      "title": "Liga Profesional 3 ottobre — raddoppio",
+      "label": "Futura",
+      "odds": "1.77×",
       "stake": "€2,50",
       "legs": [
         {
-          "when": "2026-10-04 00:00 CEST",
+          "when": "2026-10-03 19:45 CEST",
           "match": "Defensa y Justicia vs San Lorenzo",
-          "pick": "MultiGol 0-1 1° Tempo · P 85.0% · edge +17.3% · stella",
-          "odd": "1.38"
+          "pick": "Chance Mix: pareggio o Under 2.5 · P 82,7% · edge +10,9% · stella",
+          "odd": "1.34"
         },
         {
-          "when": "2026-10-04 02:15 CEST",
+          "when": "2026-10-03 22:00 CEST",
           "match": "Atlético Tucumán vs Barracas Central",
-          "pick": "MultiGol 0-1 1° Tempo · P 87.3% · edge +17.9% · stella",
-          "odd": "1.35"
+          "pick": "Chance Mix: pareggio o Under 2.5 · P 86,7% · edge +14,5% · stella",
+          "odd": "1.32"
         }
       ]
     }
